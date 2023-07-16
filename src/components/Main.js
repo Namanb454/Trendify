@@ -1,40 +1,93 @@
 import React from 'react'
 import Gallery from './Gallery';
-import { Carousel } from 'react-responsive-carousel'
+
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import { quality } from '../content/Main';
+import { travel } from '../content/Main';
 // import Carouselcomponent from './Carousel'
 
 function Main() {
-  const images = [
-    { src: 'images/qualityassured/img1.webp', alt: 'Product Image 1' },
-    { src: 'images/qualityassured/img2.webp', alt: 'Product Image 2' },
-    { src: 'images/qualityassured/img3.webp', alt: 'Product Image 3' },
-    { src: 'images/qualityassured/img4.webp', alt: 'Product Image 4' },
-    { src: 'images/qualityassured/img5.webp', alt: 'Product Image 5' },
-    { src: 'images/qualityassured/img6.webp', alt: 'Product Image 6' },
-    { src: 'images/qualityassured/img7.webp', alt: 'Product Image 7' },
-    { src: 'images/qualityassured/img8.webp', alt: 'Product Image 8' },
-    // Add more images as needed
-  ];
+  const scrollLeft1 = () => {
+    document.getElementById("content").scrollLeft -= 400;
+  }
+  const scrollRight1 = () => {
+    document.getElementById("content", "content1").scrollLeft += 400;
+  }
+  const scrollLeft2 = () => {
+    document.getElementById("content1").scrollLeft -= 400;
+  }
+  const scrollRight2 = () => {
+    document.getElementById("content1").scrollLeft += 400;
+  }
+
   return (
-    <div>
-
-      <div className="container mx-auto">
-        <div className='mx-10 my-5'>
-          <h2 className='text-xl font-semibold '>Sale is Live</h2>
+    <div className='pb-5'>
+      <div className="relative">
+        {/* <div className="text-center py-4 text-white text-xl font-bold">Exercises</div> */}
+        <div className="container mx-auto">
+          <div className='mx-10 my-5'>
+            <h2 className='text-xl font-semibold '>Sale is Live</h2>
+          </div>
+          <img className='' src='images/sale2.avif' alt='sale1' />
         </div>
-        <img className='' src='images/sale2.avif' alt='sale1' />
-      </div>
 
-      <div className="container mx-auto my-10">
 
         <div className='mx-10 my-5'>
           <h2 className='text-xl font-semibold '>Quality Assured Picks</h2>
         </div>
-        <div className='mx-10'>
-          <Gallery images={images} />
-        </div>
-      </div>
 
+        <div className='flex text-xl'>
+          <div className='m-auto'>
+            <button onClick={scrollLeft1} className="p-2 m-2 right-0 h-9 rounded-full bg-white">
+              <FiChevronLeft />
+            </button>
+          </div>
+
+          <div id="content" className="carousel flex items-center justify-start overflow-x-auto scroll-smooth">
+            {quality.map(data => {
+              return (
+                <div>
+                  <Gallery data={data} />
+                </div>
+              )
+            })}
+          </div>
+          <div className='m-auto'>
+            <button onClick={scrollRight1} className="p-2 m-2 h-9 rounded-full bg-white">
+              <FiChevronRight />
+            </button>
+          </div>
+        </div>
+
+        <div className='mx-10 my-5'>
+          <h2 className='text-xl font-semibold '>Best Selling Styles For Travel</h2>
+        </div>
+
+        <div className='flex text-xl'>
+          <div className='m-auto'>
+            <button onClick={scrollLeft2} className="p-2 m-2 right-0 h-9 rounded-full bg-white">
+              <FiChevronLeft />
+            </button>
+          </div>
+
+          <div id="content1" className="carousel flex items-center justify-start overflow-x-auto scroll-smooth">
+            {travel.map(data => {
+              return (
+                <div>
+                  <Gallery data={data} />
+                </div>
+              )
+            })}
+          </div>
+          <div className='m-auto'>
+            <button onClick={scrollRight2} className="p-2 m-2 h-9 rounded-full bg-white">
+              <FiChevronRight />
+            </button>
+          </div>
+        </div>
+
+
+      </div>
     </div>
   )
 }
