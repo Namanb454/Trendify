@@ -18,24 +18,51 @@ const Navbar = () => {
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
+
                                 <a
                                     href="/"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
-                                    Search
+                                    Men
                                 </a>
                                 <a
                                     href="/"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
-                                    About
+                                    Women
                                 </a>
                                 <a
                                     href="/"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
-                                    Contact
+                                    Kids
                                 </a>
+                                <a
+                                    href="/"
+                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                >
+                                    Beauty
+                                </a>
+                                <div className="lg:w-[50vw] relative mx-auto text-gray-600">
+                                    <input
+                                        className=" w-[100%] border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                                        type="search"
+                                        name="search"
+                                        placeholder="Search"
+                                    />
+                                    <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
+                                        <svg
+                                            className="h-4 w-4 fill-current"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                className="heroicon-ui"
+                                                d="M21.707 20.293l-5.27-5.27A8.428 8.428 0 0 0 18 10.5C18 5.813 14.687 2.5 10 2.5S2 5.813 2 10.5 5.313 18.5 10 18.5c1.357 0 2.643-.34 3.768-.964l5.27 5.27a1 1 0 1 0 1.414-1.414zM10 16.5A6.5 6.5 0 1 1 10 3.5a6.5 6.5 0 0 1 0 13z"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
                                 <a
                                     href="/"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
@@ -117,14 +144,46 @@ const Navbar = () => {
                         href="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
-                        About
+                        Men
                     </a>
                     <a
                         href="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
-                        Contact
+                        Women
                     </a>
+                    <a
+                        href="/"
+                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                    >
+                        Kids
+                    </a>
+                    <a
+                        href="/"
+                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                    >
+                        Beauty
+                    </a>
+                    <div className="relative mx-auto text-gray-600">
+                        <input
+                            className="w-full border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                            type="search"
+                            name="search"
+                            placeholder="Search"
+                        />
+                        <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
+                            <svg
+                                className="h-4 w-4 fill-current"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    className="heroicon-ui"
+                                    d="M21.707 20.293l-5.27-5.27A8.428 8.428 0 0 0 18 10.5C18 5.813 14.687 2.5 10 2.5S2 5.813 2 10.5 5.313 18.5 10 18.5c1.357 0 2.643-.34 3.768-.964l5.27 5.27a1 1 0 1 0 1.414-1.414zM10 16.5A6.5 6.5 0 1 1 10 3.5a6.5 6.5 0 0 1 0 13z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
                     <a
                         href="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
