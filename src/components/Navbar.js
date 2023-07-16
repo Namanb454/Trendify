@@ -65,13 +65,13 @@ const Navbar = () => {
                                 </div>
                                 <a
                                     href="/"
-                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                    className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
                                     Cart
                                 </a>
                                 <a
                                     href="/"
-                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                    className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
                                     Login
                                 </a>
@@ -186,13 +186,13 @@ const Navbar = () => {
                     </div>
                     <a
                         href="/"
-                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                        className="text-[#2d7dff] w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Cart
                     </a>
                     <a
                         href="/"
-                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                        className="text-[#2d7dff] w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Login
                     </a>
