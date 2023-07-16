@@ -1,103 +1,147 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-function Navbar() {
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <div>
-            <section class="text-gray-600 body-font">
-                <div class="container px-5 py-24 mx-auto">
-                    <div class="flex flex-wrap -m-4">
-                        <div class="p-4 md:w-1/3">
-                            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/720x400" alt="blog" />
-                                <div class="p-6">
-                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The Catalyzer</h1>
-                                    <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                    <div class="flex items-center flex-wrap ">
-                                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M5 12h14"></path>
-                                                <path d="M12 5l7 7-7 7"></path>
-                                            </svg>
-                                        </a>
-                                        <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                                            <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                <circle cx="12" cy="12" r="3"></circle>
-                                            </svg>1.2K
-                                        </span>
-                                        <span class="text-gray-400 inline-flex items-center leading-none text-sm">
-                                            <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                                            </svg>6
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+        <nav className="bg-[#2874f0]">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
+                    <div className="flex items-center mx-auto">
+                        <div className="flex-shrink-0">
+                            {/* <img className="h-8 w-8" src="/logo.svg" alt="Logo" /> */}
+                            <h2 className='text-xl font-bold text-[#d4e7ff]'>Trendify</h2>
                         </div>
-                        <div class="p-4 md:w-1/3">
-                            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/721x401" alt="blog" />
-                                <div class="p-6">
-                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">The 400 Blows</h1>
-                                    <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                    <div class="flex items-center flex-wrap">
-                                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M5 12h14"></path>
-                                                <path d="M12 5l7 7-7 7"></path>
-                                            </svg>
-                                        </a>
-                                        <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                                            <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                <circle cx="12" cy="12" r="3"></circle>
-                                            </svg>1.2K
-                                        </span>
-                                        <span class="text-gray-400 inline-flex items-center leading-none text-sm">
-                                            <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                                            </svg>6
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 md:w-1/3">
-                            <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                                <img class="lg:h-48 md:h-36 w-full object-cover object-center" src="https://dummyimage.com/722x402" alt="blog" />
-                                <div class="p-6">
-                                    <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">Shooting Stars</h1>
-                                    <p class="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                    <div class="flex items-center flex-wrap ">
-                                        <a class="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
-                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M5 12h14"></path>
-                                                <path d="M12 5l7 7-7 7"></path>
-                                            </svg>
-                                        </a>
-                                        <span class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
-                                            <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                                <circle cx="12" cy="12" r="3"></circle>
-                                            </svg>1.2K
-                                        </span>
-                                        <span class="text-gray-400 inline-flex items-center leading-none text-sm">
-                                            <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
-                                            </svg>6
-                                        </span>
-                                    </div>
-                                </div>
+                        <div className="hidden md:block">
+                            <div className="ml-10 flex items-baseline space-x-4">
+                                <a
+                                    href="/"
+                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                >
+                                    Search
+                                </a>
+                                <a
+                                    href="/"
+                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                >
+                                    About
+                                </a>
+                                <a
+                                    href="/"
+                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                >
+                                    Contact
+                                </a>
+                                <a
+                                    href="/"
+                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                >
+                                    Cart
+                                </a>
+                                <a
+                                    href="/"
+                                    className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                >
+                                    Login
+                                </a>
                             </div>
                         </div>
                     </div>
+                    <div className="-mr-2 flex md:hidden">
+                        <button
+                            onClick={toggleMenu}
+                            type="button"
+                            className="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-black hover:bg-white focus:outline-none focus:ring- focus:ring-offset- focus:ring-offset-gray-800 focus:ring-white"
+                            aria-controls="mobile-menu"
+                            aria-expanded="false"
+                        >
+                            <span className="sr-only">Open main menu</span>
+                            {/* Icon when menu is closed */}
+                            {!isOpen ? (
+                                <svg
+                                    className="block h-6 w-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16/4 18h16"
+                                    />
+                                </svg>
+                            ) : (
+                                // Icon when menu is open
+                                <svg
+                                    className="block h-6 w-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M6 18L18 6M6 6l12 12"
+                                    />
+                                </svg>
+                            )}
+                        </button>
+                    </div>
                 </div>
-            </section>
-        </div>
-    )
-}
+            </div>
 
-export default Navbar
+            {/* Mobile menu, toggle classes based on menu state */}
+            <div
+                className={`${isOpen ? 'block' : 'hidden'
+                    } md:hidden bg-[#2874f0]`}
+                id="mobile-menu"
+            >
+                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    {/* <a
+                        href="/"
+                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                    >
+                        Home
+                    </a> */}
+                    <a
+                        href="/"
+                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                    >
+                        About
+                    </a>
+                    <a
+                        href="/"
+                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                    >
+                        Contact
+                    </a>
+                    <a
+                        href="/"
+                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                    >
+                        Cart
+                    </a>
+                    <a
+                        href="/"
+                        className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                    >
+                        Login
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+    );
+};
+
+export default Navbar;
