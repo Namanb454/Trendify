@@ -4,6 +4,7 @@ import Gallery from './Gallery';
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { quality } from '../content/Main';
 import { travel } from '../content/Main';
+// import { Carousel } from 'react-responsive-carousel';
 // import Carouselcomponent from './Carousel'
 
 function Main() {
@@ -31,7 +32,7 @@ function Main() {
           <img className='' src='images/sale2.avif' alt='sale1' />
         </div>
 
-
+        {/* Quality */}
         <div className='mx-10 my-5'>
           <h2 className='text-xl font-semibold '>Quality Assured Picks</h2>
         </div>
@@ -59,6 +60,8 @@ function Main() {
           </div>
         </div>
 
+
+        {/* Travel  */}
         <div className='mx-10 my-5'>
           <h2 className='text-xl font-semibold '>Best Selling Styles For Travel</h2>
         </div>
