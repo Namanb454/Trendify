@@ -7,7 +7,7 @@ const Gallery = (props) => {
                 <div className="relative text-center" >
                     <a href='/'>
                         <img
-                            className="lg:w-full lg:h-[55vh] object-cover hover p-2 "
+                            className="lg:w-full lg:h-[45vh] object-cover hover p-2 "
 
                             src={props.data.img}
                             alt={props.data.title}

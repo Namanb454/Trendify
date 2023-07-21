@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
-
+import { BsFillCartFill } from "react-icons/bs";
+import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
+
     const [isOpen, setIsOpen] = useState(false);
+    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { loginWithRedirect } = useAuth0();
+    const { logout } = useAuth0();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -43,7 +48,7 @@ const Navbar = () => {
                                 >
                                     Beauty
                                 </a>
-                                <div className="lg:w-[50vw] relative mx-auto text-gray-600">
+                                <div className="lg:w-[40vw] relative mx-auto text-gray-600">
                                     <input
                                         className=" w-[100%] border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
                                         type="search"
@@ -65,16 +70,28 @@ const Navbar = () => {
                                 </div>
                                 <a
                                     href="/"
-                                    className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                    className="text-[#2d7dff] flex bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
+                                    <span className='my-auto mx-1'>
+                                        <BsFillCartFill />
+                                    </span>
                                     Cart
                                 </a>
-                                <a
-                                    href="/"
-                                    className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
-                                >
-                                    Login
-                                </a>
+                                {isAuthenticated ? (
+                                    <button
+                                        onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                                        className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                    >
+                                        Logout
+                                    </button>
+                                ) : (
+                                    <button
+                                        onClick={() => loginWithRedirect()}
+                                        className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
+                                    >
+                                        Login
+                                    </button>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -191,7 +208,7 @@ const Navbar = () => {
                         Cart
                     </a>
                     <a
-                        href="/"
+                        href="/signup"
                         className="text-[#2d7dff] w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Login
