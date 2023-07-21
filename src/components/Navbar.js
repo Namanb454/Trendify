@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
-    const { user, isAuthenticated, isLoading } = useAuth0();
+    const { isAuthenticated } = useAuth0();
     const { loginWithRedirect } = useAuth0();
     const { logout } = useAuth0();
 
@@ -83,13 +83,16 @@ const Navbar = () => {
                                         className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                     >
                                         Logout
+                                        {console.log("Logout")}
                                     </button>
+
                                 ) : (
                                     <button
                                         onClick={() => loginWithRedirect()}
                                         className="text-[#2d7dff] bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                     >
                                         Login
+                                        {console.log("Login")}
                                     </button>
                                 )}
                             </div>

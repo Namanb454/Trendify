@@ -9,14 +9,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   <Auth0Provider
-  domain="trendify.us.auth0.com"
-  clientId="phb8nCESIj2QLaYRf46IC3Z3II5ToxSc"
-  authorizationParams={{
-    redirect_uri: window.location.origin
-  }}
->
-  <App />
-</Auth0Provider>,
+    domain="trendify.us.auth0.com"
+    clientId="phb8nCESIj2QLaYRf46IC3Z3II5ToxSc"
+    redirectUri={window.location.origin}
+  >
+    <App />
+  </Auth0Provider>,
   // </React.StrictMode>
 );
 
