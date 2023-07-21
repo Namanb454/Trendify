@@ -203,17 +203,28 @@ const Navbar = () => {
                     </div>
                     <a
                         href="/"
-                        className="text-[#2d7dff] w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
+                        className="text-[#2d7dff] flex w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
+                        <span className=' mx-1 my-auto'>
+                            <BsFillCartFill />
+                        </span>
                         Cart
                     </a>
-                    <a
-                        href="/signup"
-                        className="text-[#2d7dff] w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
-                    >
-                        Login
-                    </a>
-
+                    {isAuthenticated ? (
+                        <button
+                            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+                            className="text-[#2d7dff] w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-5 py-2 rounded-md text-base"
+                        >
+                            Logout
+                        </button>
+                    ) : (
+                        <button
+                            onClick={() => loginWithRedirect()}
+                            className="text-[#2d7dff] w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-5 py-2 rounded-md text-base"
+                        >
+                            Login
+                        </button>
+                    )}
                 </div>
             </div>
         </nav>
