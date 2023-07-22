@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BsFillCartFill } from "react-icons/bs";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = useState(false);
@@ -19,35 +20,35 @@ const Navbar = () => {
                     <div className="flex items-center mx-auto">
                         <div className="flex-shrink-0">
                             {/* <img className="h-8 w-8" src="/logo.svg" alt="Logo" /> */}
-                            <h2 className='text-xl font-bold text-[#d4e7ff]'>Trendify</h2>
+                            <Link to='/' className='text-xl font-bold text-[#d4e7ff]'>Trendify</Link>
                         </div>
                         <div className="hidden md:block">
                             <div className="ml-10 flex items-baseline space-x-4">
 
-                                <a
-                                    href="/"
+                                <Link
+                                    to="/men"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
                                     Men
-                                </a>
-                                <a
-                                    href="/"
+                                </Link>
+                                <Link
+                                    to="/women"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
                                     Women
-                                </a>
-                                <a
-                                    href="/"
+                                </Link>
+                                <Link
+                                    to="/kids"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
                                     Kids
-                                </a>
-                                <a
-                                    href="/"
+                                </Link>
+                                <Link
+                                    to="/beauty"
                                     className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
                                     Beauty
-                                </a>
+                                </Link>
                                 <div className="lg:w-[40vw] relative mx-auto text-gray-600">
                                     <input
                                         className=" w-[100%] border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
@@ -68,15 +69,15 @@ const Navbar = () => {
                                         </svg>
                                     </button>
                                 </div>
-                                <a
-                                    href="/"
+                                <Link
+                                    to="/cart"
                                     className="text-[#2d7dff] flex bg-white font-semibold hover:bg-[#2d7dff] hover:text-white px-3 py-2 rounded-md text-sm"
                                 >
                                     <span className='my-auto mx-1'>
                                         <BsFillCartFill />
                                     </span>
                                     Cart
-                                </a>
+                                </Link>
                                 {isAuthenticated ? (
                                     <button
                                         onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
@@ -154,36 +155,36 @@ const Navbar = () => {
                 id="mobile-menu"
             >
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    {/* <a
-                        href="/"
+                    {/* <Link
+                        to="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Home
-                    </a> */}
-                    <a
-                        href="/"
+                    </Link> */}
+                    <Link
+                        to="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Men
-                    </a>
-                    <a
-                        href="/"
+                    </Link>
+                    <Link
+                        to="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Women
-                    </a>
-                    <a
-                        href="/"
+                    </Link>
+                    <Link
+                        to="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Kids
-                    </a>
-                    <a
-                        href="/"
+                    </Link>
+                    <Link
+                        to="/"
                         className="text-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         Beauty
-                    </a>
+                    </Link>
                     <div className="relative mx-auto text-gray-600">
                         <input
                             className="w-full border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
@@ -204,15 +205,15 @@ const Navbar = () => {
                             </svg>
                         </button>
                     </div>
-                    <a
-                        href="/"
+                    <Link
+                        to="/"
                         className="text-[#2d7dff] flex w-fit bg-white font-semibold hover:bg-[#2d7dff] hover:text-white block px-3 py-2 rounded-md text-base"
                     >
                         <span className=' mx-1 my-auto'>
                             <BsFillCartFill />
                         </span>
                         Cart
-                    </a>
+                    </Link>
                     {isAuthenticated ? (
                         <button
                             onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
